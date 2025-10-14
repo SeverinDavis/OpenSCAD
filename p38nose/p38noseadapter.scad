@@ -30,9 +30,10 @@ stretchdiameter = reary;
 
 
 //INDEXRODS
-indexroddiameter = 2.6;
-indexoffset = 1;
-indexroddiameterouter = indexroddiameter + 1;
+indexroddiameter = 2.8;
+indexoffset = 1.1;
+
+
 
 
 difference()
@@ -118,6 +119,31 @@ translate([0,0, 28])
    { 
 rotate([0,180,0])
 {
+   translate([7,0,0])
+    {
+        difference()
+        {
+            sphere(d=stretchdiameter);
+            translate([-stretchdiameter/2,-stretchdiameter/2,-stretchdiameter])
+            {
+                cube([stretchdiameter,stretchdiameter,stretchdiameter]);
+            } 
+        }
+    } 
+    
+    translate([-7,0,0])
+    {
+        difference()
+        {
+            sphere(d=stretchdiameter);
+            translate([-stretchdiameter/2,-stretchdiameter/2,-stretchdiameter])
+            {
+                cube([stretchdiameter,stretchdiameter,stretchdiameter]);
+            } 
+        }
+    } 
+    
+    
    translate([0,5,0])
     {
         difference()
@@ -192,9 +218,15 @@ translate([(adaptrearx/2)-corneroffset,(-adaptreary/2)+corneroffset,0])
 }
 }
 }//hull
+{
 translate([-innercutoutx/2,-innercutouty/2,-ZERO])
 {
     cube([innercutoutx,innercutouty,stretchdiameter]);
+}
+translate([-50/2,-40/2,10])
+{
+    cube([50,40,stretchdiameter]);
+}
 }
 }//difference
 
@@ -225,6 +257,22 @@ translate([.5,0,0])
     cylinder(10, indexroddiameter/2, indexroddiameter/2);
 }
 }
+translate([0,10,18])
+{
+rotate([-90,0,0])
+{
+cylinder(20, 6.6/2, 6.6/2);
+}
+}
+
+translate([0,21,18])
+{
+rotate([-90,0,0])
+{
+cylinder(10, 10/2, 10/2);
+}
+}
+
 }
 }
 
