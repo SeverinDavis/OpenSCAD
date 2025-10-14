@@ -3,8 +3,8 @@ $fn=100;
 rearx = 50;
 reary = 42.5;
 
-innercutoutx = rearx - 6;
-innercutouty = reary - 6;
+innercutoutx = rearx - 8;
+innercutouty = reary - 8;
 
 adaptrearx =50;
 adaptreary= 45;
@@ -192,7 +192,7 @@ translate([(adaptrearx/2)-corneroffset,(-adaptreary/2)+corneroffset,0])
 }
 }
 }//hull
-translate([-innercutoutx/2,-innercutouty/2,2])
+translate([-innercutoutx/2,-innercutouty/2,-ZERO])
 {
     cube([innercutoutx,innercutouty,stretchdiameter]);
 }
@@ -201,28 +201,28 @@ translate([-innercutoutx/2,-innercutouty/2,2])
 
 {
 //INDEXROD1
- translate([0,21,-5])
+ translate([0,21,-ZERO])
 {
    translate([-.5,0,0])
 {
-    cylinder(50, indexroddiameter/2, indexroddiameter/2);
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
 }
 translate([.5,0,0])
 {
-    cylinder(50, indexroddiameter/2, indexroddiameter/2);
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
 }
 }
 
 //INDEXROD2
- translate([0,-20,-5])
+ translate([0,-20,-ZERO])
 {
    translate([-.5,0,0])
 {
-    cylinder(50, indexroddiameter/2, indexroddiameter/2);
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
 }
 translate([.5,0,0])
 {
-    cylinder(50, indexroddiameter/2, indexroddiameter/2);
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
 }
 }
 }
