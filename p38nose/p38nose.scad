@@ -178,11 +178,11 @@ translate([0,0,camerasink])
 {
    translate([-.5,0,0])
 {
-    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+    cylinder(8, indexroddiameter/2, indexroddiameter/2);
 }
 translate([.5,0,0])
 {
-    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+    cylinder(8, indexroddiameter/2, indexroddiameter/2);
 }
 }
 
@@ -191,11 +191,11 @@ translate([.5,0,0])
 {
    translate([-.5,0,0])
 {
-    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+    cylinder(8, indexroddiameter/2, indexroddiameter/2);
 }
 translate([.5,0,0])
 {
-    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+    cylinder(8, indexroddiameter/2, indexroddiameter/2);
 }
 }
 
