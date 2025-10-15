@@ -4,6 +4,9 @@ rearx = 50;
 reary = 42.5;
 nosediameter = 33;
 
+innercutoutx = rearx - 8;
+innercutouty = reary - 8;
+
 cornerdiameter = 18;
 corneroffset = cornerdiameter/2;
 
@@ -23,7 +26,12 @@ camerasink = 19;
 
 stretchdiameter = reary;
 
+//INDEXRODS
+indexroddiameter = 2.9;
+indexoffset = 1.1;
 
+difference()
+{
 difference()
 {
 
@@ -164,7 +172,41 @@ translate([0,0,camerasink])
 };
 }
 
+{
+//INDEXROD1
+ translate([0,21,-ZERO])
+{
+   translate([-.5,0,0])
+{
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+}
+translate([.5,0,0])
+{
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+}
+}
+
+//INDEXROD2
+ translate([0,-20,-ZERO])
+{
+   translate([-.5,0,0])
+{
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+}
+translate([.5,0,0])
+{
+    cylinder(10, indexroddiameter/2, indexroddiameter/2);
+}
+}
+
+translate([0,0,7-ZERO])
+    cylinder(14,r1=18,r2=15,center = true);
 
 
+}
+}//difference
 
- 
+translate([-13,0,2])
+ cube([3,30,4], center = true);
+translate([13,0,2])
+ cube([3,30,4], center = true);

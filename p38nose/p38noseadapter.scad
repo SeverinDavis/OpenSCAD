@@ -30,7 +30,7 @@ stretchdiameter = reary;
 
 
 //INDEXRODS
-indexroddiameter = 2.8;
+indexroddiameter = 2.9;
 indexoffset = 1.1;
 
 
@@ -257,7 +257,7 @@ translate([.5,0,0])
     cylinder(10, indexroddiameter/2, indexroddiameter/2);
 }
 }
-translate([0,10,18])
+translate([0,10,20])
 {
 rotate([-90,0,0])
 {
@@ -265,16 +265,25 @@ cylinder(20, 6.6/2, 6.6/2);
 }
 }
 
-translate([0,21,18])
+translate([0,21,20])
 {
 rotate([-90,0,0])
 {
-cylinder(10, 10/2, 10/2);
+cylinder(10, 20/2, 20/2);
 }
 }
 
 }
 }
 
+
+//hooks
+translate([20,0,8.1])
+rotate([0,-20,0])
+cylinder(h = 16, d = 3, center = true);
+//hooks
+translate([-20,0,8.1])
+rotate([0,20,0])
+cylinder(h = 16, d = 3, center = true);
 
 
