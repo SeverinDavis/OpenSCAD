@@ -9,7 +9,7 @@ batt_length = 114;
 
 body_width = 56;
 body_length = 130;
-body_height = 36;
+body_height = 38;
 
 blocker_dim = 500;
 
@@ -49,9 +49,9 @@ intersection()
          translate([0,0,3])
       rotate([-3,0,0])
       {
-          cube([batt_width,batt_length, batt_height], center = true);
-          translate([battend_width/2 - batt_width/2 - 4.5,-batt_length/2 + battend_length/2, 0])
-          cube([battend_width,battend_length, batt_height], center = true); 
+         cube([batt_width,batt_length, batt_height], center = true);
+          translate([battend_width/2 - batt_width/2 - 4.5,(-battend_length_rot/2) -batt_length/2 + battend_length, 0])
+          cube([battend_width,battend_length_rot, batt_height], center = true);
       } 
         }
    }
@@ -60,16 +60,16 @@ intersection()
 
 
 {
-  //translate([25+25-4.5,-45, 25-ZERO])
-   //cube([50,50, 50], center = true);
-    
-   // translate([-25-25+4.5,-45, 25-ZERO])
-   //cube([50,50, 50], center = true);
+translate([-4.5/2 + 25,-25, 19-ZERO])
+   cube([4.5+ZERO,50, 24], center = true);
+  translate([4.5/2 - 25,-25, 19-ZERO])
+   cube([4.5+ZERO,50, 24], center = true);
 }
 }
 
 
 //battery
+/*
     {
     translate([0,0, -50])
       {
@@ -80,10 +80,18 @@ intersection()
       rotate([-3,0,0])
       {
           cube([batt_width,batt_length, batt_height], center = true);
-          translate([battend_width/2 - batt_width/2 - 4.5,-batt_length/2 + battend_length/2, 0])
-          cube([battend_width,battend_length, batt_height], center = true); 
+          translate([battend_width/2 - batt_width/2 - 4.5,(-battend_length_rot/2) -batt_length/2 + battend_length, 0])
+          cube([battend_width,battend_length_rot, batt_height], center = true); 
       } 
       }
       
 
    }
+*/
+
+/*
+translate([-4.5/2 + 25,-25, 19-ZERO])
+   cube([4.5+ZERO,50, 24], center = true);
+  translate([4.5/2 - 25,-25, 19-ZERO])
+   cube([4.5+ZERO,50, 24], center = true);
+   */
