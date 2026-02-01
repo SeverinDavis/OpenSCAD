@@ -1,7 +1,11 @@
-wall_thick = 1.5875;
+$fn=100;
+
+plug_looseness = 0.25;
+
+wall_thick = 1.5875 + plug_looseness;
 extrusion_height = 38.1;
 extrusion_width = 19.05;
-leg_length = 44.45;
+leg_length = 40;
 taper_rise = 0.79375;
 taper_run = 3.175;
 
