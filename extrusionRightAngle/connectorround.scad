@@ -1,6 +1,6 @@
 $fn=100;
 
-plug_looseness = 0.125;
+plug_looseness = 0.100;
 
 wall_thick = 1.5875 + plug_looseness;
 extrusion_height = 38.1;
