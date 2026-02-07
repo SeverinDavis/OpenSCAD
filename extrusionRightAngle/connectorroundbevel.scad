@@ -1,6 +1,8 @@
+use </../sevlib.scad>
+
 $fn=100;
 
-plug_looseness = 0.125;
+plug_looseness = 0.100;
 
 wall_thick = 1.5875 + plug_looseness;
 extrusion_height = 38.1;
@@ -17,6 +19,8 @@ taper_width = leg_width - (2 * taper_rise);
 
 near_zero = 0.0001;
 
+bevel_radius = 2;
+
 
 
 intersection()
@@ -31,9 +35,9 @@ intersection()
 
 hull()
 {
-translate([wall_thick, extrusion_width - near_zero, wall_thick])
+translate([wall_thick, extrusion_width - bevel_radius, wall_thick])
 {
-    cube([leg_width, leg_length - taper_run, leg_height]);
+    cubeBevel(leg_width, leg_length - taper_run + bevel_radius, leg_height, bevel_radius);
 }
 
 translate([wall_thick + taper_rise, extrusion_width + leg_length, wall_thick + taper_rise])
@@ -41,18 +45,18 @@ translate([wall_thick + taper_rise, extrusion_width + leg_length, wall_thick + t
     cube([taper_width, near_zero, taper_height]);
 }
 }
-
-
-
+ 
+{
 hull()
 {
-translate([extrusion_width - near_zero, wall_thick, wall_thick])
+translate([extrusion_width - bevel_radius, wall_thick, wall_thick])
 {
-    cube([leg_length - taper_run, leg_width, leg_height]);
+    cubeBevel(leg_length - taper_run + bevel_radius, leg_width, leg_height, bevel_radius);
 }
 translate([extrusion_width + leg_length, wall_thick + taper_rise, wall_thick + taper_rise])
 {
     cube([near_zero, taper_width, taper_height]);
 }
 
+}
 }
